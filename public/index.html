@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCPS Math Practice App</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {}
+      }
+    }
+  </script>
+  <!-- Ensure babel.min.js is in the same folder (downloaded from https://unpkg.com/@babel/standalone@7.27.6/babel.min.js) -->
+  <script src="./babel.min.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root" class="h-screen w-full flex flex-col transition-colors duration-300"></div>
+  <script type="text/babel">
+    console.log('Script started: React loaded?', !!window.React, 'ReactDOM loaded?', !!window.ReactDOM, 'Babel loaded?', !!window.Babel);
+
+    if (!window.Babel) {
+      document.getElementById('root').innerHTML = `
+        <div class="text-center p-4">
+          <h1 class="text-2xl font-bold text-red-600">Error</h1>
+          <p>Babel failed to load. Ensure babel.min.js is in the same folder.</p>
+        </div>
+      `;
+    }
+
+    function MathProblem({ problem, onAnswer, result }) {
+      const [userAnswer, setUserAnswer] = React.useState('');
+      console.log('MathProblem rendering:', problem);
+
+      const handleSubmit = () => {
+        onAnswer(userAnswer);
+        setUserAnswer('');
+      };
+
+      return (
+        <div class="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <h2 class="text-lg sm:text-xl font-semibold mb-4 text-gray-900 dark:text-white">{problem ? problem.question : 'Loading...'}</h2>
+          <input
+            type="text"
+            value={userAnswer}
+            onChange={(e) => setUserAnswer(e.target.value)}
+            placeholder="Enter your answer"
+            class="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:text-white dark:border-gray-600 text-sm sm:text-base"
+          />
+          <button
+            onClick={handleSubmit}
+            class="bg-blue-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded hover:bg-blue-600 dark:hover:bg-blue-700 text-sm sm:text-base"
+          >
+            Submit
+          </button>
+          {result && (
+            <p class={`mt-4 ${result.correct ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'} text-sm sm:text-base`}>
+              {result.message}
+            </p>
+          )}
+        </div>
+      );
+    }
+
+    function App() {
+      console.log('App component rendering');
+      const [curriculumTopics, setCurriculumTopics] = React.useState({});
+      const [grade, setGrade] = React.useState('');
+      const [topic, setTopic] = React.useState('');
+      const [currentProblem, setCurrentProblem] = React.useState(null);
+      const [result, setResult] = React.useState(null);
+      const [error, setError] = React.useState('');
+      const [loading, setLoading] = React.useState(false);
+      const [theme, setTheme] = React.useState(localStorage.getItem('theme') || 'light');
+
+      const baseUrl = (window.location.hostname === 'localhost' ||window.location.hostname === '') ? 'http://localhost:3000' : 'https://mathapp-7327.onrender.com';
+      
+      React.useEffect(() => {
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        localStorage.setItem('theme', theme);
+      }, [theme]);
+
+      //Load  curriculum from the server
+      React.useEffect(() => {
+        async function load() {
+          try {
+            //const baseUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://mathapp-7327.onrender.com';
+            //const baseUrl = 'http://localhost:3000';
+            const { data } = await axios.get(`${baseUrl}/get-curriculum-topics`);
+            setCurriculumTopics((data));
+          } catch (err) {
+            setError('Cannot load curriculum topics');
+            console.error(err);
+          }
+        }
+        load();
+      }, []);
+
+      const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+      };
+
+      const fetchCurriculumTopics = async () => {
+        setError('');
+        setLoading(true);
+        const encodedTopic = encodeURIComponent(selectedTopic);
+        //const baseUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://mathapp-7327.onrender.com';
+        //const baseUrl = 'http://localhost:3000';
+        const url = `${baseUrl}/get-curriculum-topics`;
+        console.log('Fetching curriculum topics:', url);
+        try {
+          const response = await axios.get(url);
+          console.log('Curriculum fetched:', response.data);
+          //setCurrentProblem(response.data);
+        } catch (error) {
+          console.error('Error fetching Curriculum:', error);
+          const errorMessage = error.response?.data
+            ? `Backend error: ${error.response.data.error || 'Unknown error'}${error.response.data.details ? ' - ' + error.response.data.details : ''}${error.response.data.status ? ' (Status: ' + error.response.data.status + ')' : ''}`
+            : `Failed to fetch problem: ${error.message}`;
+          setError(errorMessage);
+          //setCurrentProblem(null);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+
+      /* const curriculumTopics = {
+         'K': ['number sense', 'counting', 'patterns', 'shapes'],
+         '1': ['addition', 'subtraction', 'measurement', 'basic geometry'],
+         '2': ['addition', 'subtraction', 'place value', 'time'],
+         '3': ['multiplication', 'division', 'fractions', 'area'],
+         '4': ['fractions', 'decimals', 'perimeter', 'data analysis'],
+         '5': ['decimals', 'fractions', 'volume', 'coordinate geometry'],
+         '6': ['ratios', 'proportions', 'integers', 'geometry'],
+         '7': ['pre-algebra', 'proportions', 'probability', 'data analysis'],
+         '8': ['pre-algebra', 'linear functions', 'geometry', 'statistics'],
+         '9': ['algebra', 'linear equations', 'functions', 'systems of equations'],
+         '10': ['geometry', 'trigonometry', 'quadratic equations', 'functions'],
+         '11': ['algebra II', 'trigonometry', 'exponential functions', 'statistics'],
+         '12': ['calculus', 'probability', 'statistics', 'advanced functions']
+       };
+       */
+      const fetchProblem = async (selectedGrade, selectedTopic) => {
+        setError('');
+        setLoading(true);
+        const encodedTopic = encodeURIComponent(selectedTopic);
+        //const baseUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://mathapp-7327.onrender.com';
+        //const baseUrl = 'http://localhost:3000';
+        const url = `${baseUrl}/generate-problem?grade=${selectedGrade}&topic=${encodedTopic}&nonce=${Date.now()}`;
+        console.log('Fetching problem:', url);
+        try {
+          const response = await axios.get(url);
+          console.log('Problem fetched:', response.data);
+          setCurrentProblem(response.data);
+        } catch (error) {
+          console.error('Error fetching problem:', error);
+          const errorMessage = error.response?.data
+            ? `Backend error: ${error.response.data.error || 'Unknown error'}${error.response.data.details ? ' - ' + error.response.data.details : ''}${error.response.data.status ? ' (Status: ' + error.response.data.status + ')' : ''}`
+            : `Failed to fetch problem: ${error.message}`;
+          setError(errorMessage);
+          setCurrentProblem(null);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const handleGradeSelect = (selectedGrade) => {
+        console.log('Grade selected:', selectedGrade);
+        setGrade(selectedGrade);
+        setTopic('');
+        setCurrentProblem(null);
+        setResult(null);
+        setError('');
+      };
+
+      const handleTopicSelect = (selectedTopic) => {
+        console.log('Topic selected:', selectedTopic);
+        setTopic(selectedTopic);
+        setCurrentProblem(null);
+        setResult(null);
+        setError('');
+      };
+
+      const handleGetProblem = () => {
+        if (grade && topic) {
+          fetchProblem(grade, topic);
+        }
+      };
+
+      const checkAnswer = (userAnswer) => {
+        if (!currentProblem) return;
+        console.log('Checking answer:', userAnswer, 'against:', currentProblem.answer);
+        const isCorrect = userAnswer.trim().toLowerCase() === String(currentProblem.answer).trim().toLowerCase();
+        setResult({
+          correct: isCorrect,
+          message: isCorrect ? 'Correct!' : `Incorrect. The answer is ${currentProblem.answer}.`
+        });
+        setTimeout(() => {
+          setResult(null);
+          fetchProblem(grade, topic);
+        }, 4000);
+      };
+
+      const handleNextQuestion = () => {
+        if (grade && topic) {
+          const relatedTopics = curriculumTopics[grade];
+          const newTopic = relatedTopics[Math.floor(Math.random() * relatedTopics.length)];
+          fetchProblem(grade, newTopic);
+        } else {
+          fetchProblem('7', 'pre-algebra');
+        }
+      };
+
+      return (
+        <div class={`w-full ${theme === 'dark' ? 'dark bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'} flex flex-col items-center px-4 sm:px-6 py-4 sm:py-6`}>
+          <div class="flex justify-end w-full max-w-2xl mb-4">
+            <button
+              onClick={toggleTheme}
+              class="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-3 py-1 sm:px-4 sm:py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600 text-sm sm:text-base"
+            >
+              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+            </button>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">LCPS Math Practice App</h1>
+          {loading && <p class="text-blue-600 dark:text-blue-400 mb-4 text-sm sm:text-base">Loading problem...</p>}
+          {error && <p class="text-red-600 dark:text-red-400 mb-4 text-sm sm:text-base">{error}</p>}
+          <div class="mb-6 w-full max-w-xs sm:max-w-sm md:max-w-md">
+            <div class="mb-4">
+              <label class="block text-base sm:text-lg font-semibold mb-2">Select Grade</label>
+              <select
+                value={grade}
+                onChange={(e) => handleGradeSelect(e.target.value)}
+                class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white dark:border-gray-600 text-sm sm:text-base"
+              >
+                <option value="">Choose a grade</option>
+                {['K', '1', '2', '3', '4', '5', '6', '7', '8', 'Algebra I', 'Geometry', 'Algebra II', 'Computer Mathematics', 'Algebra II with Trigonometry', 'Trigonometry / Advanced Algebra', 'Functions; Algebra & Data Analysis', 'Precalculus', 'Math Analysis', 'Discrete Mathematics (Semester)', 'Probability & Statistics (Semester)', 'Probability & Statistics (Full Year)', 'AP Precalculus', 'AP Calculus AB', 'AP Calculus BC', 'AP Statistics'].map((g) => (
+                  <option key={g} value={g}>Grade {g}</option>
+                ))}
+              </select>
+            </div>
+            {grade && (
+              <div class="mb-4">
+                <label class="block text-base sm:text-lg font-semibold mb-2">Select Topic</label>
+                <select
+                  value={topic}
+                  onChange={(e) => handleTopicSelect(e.target.value)}
+                  class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white dark:border-gray-600 text-sm sm:text-base"
+                >
+                  <option value="">Choose a topic</option>
+                  {
+                    curriculumTopics[grade].map((t) => (
+                      <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>
+                    ))}
+                </select>
+              </div>
+            )}
+            {grade && topic && (
+              <>
+                <button
+                  onClick={handleGetProblem}
+                  class="bg-green-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded hover:bg-green-600 dark:hover:bg-green-700 text-sm sm:text-base mr-2"
+                  disabled={loading}
+                >
+                  Get Problem
+                </button>
+                <button
+                  onClick={() => {
+                    const relatedTopics = curriculumTopics[grade];
+                    handleTopicSelect(relatedTopics[Math.floor(Math.random() * relatedTopics.length)]);
+                  }}
+                  class="bg-blue-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded hover:bg-blue-600 dark:hover:bg-blue-700 text-sm sm:text-base"
+                >
+                  Randomize Topic
+                </button>
+              </>
+            )}
+            <button
+              onClick={handleNextQuestion}
+              class="mt-4 bg-purple-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded hover:bg-purple-600 dark:hover:bg-purple-700 text-sm sm:text-base"
+            >
+              Next Question
+            </button>
+          </div>
+          {currentProblem ? (
+            <div class="w-full flex flex-col items-center">
+              <h2 class="text-xl sm:text-2xl mb-4">Grade {grade} - {topic.charAt(0).toUpperCase() + topic.slice(1)}</h2>
+              <MathProblem problem={currentProblem} onAnswer={checkAnswer} result={result} />
+              <button
+                onClick={() => {
+                  setGrade('');
+                  setTopic('');
+                  setCurrentProblem(null);
+                  setError('');
+                }}
+                class="mt-4 bg-gray-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded hover:bg-gray-600 dark:hover:bg-gray-700 text-sm sm:text-base"
+              >
+                Change Grade/Topic
+              </button>
+            </div>
+          ) : (
+            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Select a grade and topic to start practicing!</p>
+          )}
+        </div>
+      );
+    }
+
+    console.log('Rendering App component');
+    const root = ReactDOM.createRoot ? ReactDOM.createRoot(document.getElementById('root')) : { render: (comp) => ReactDOM.render(comp, document.getElementById('root')) };
+    root.render(<App />);
+  </script>
+</body>
+
+</html>

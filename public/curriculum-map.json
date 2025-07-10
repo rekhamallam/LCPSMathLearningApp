@@ -1,0 +1,301 @@
+{
+  "K": 
+[
+"Building a Mathematical Community Through the Data Cycle",
+"Exploring Numeracy 0-10",
+"Objects and Their Attributes",
+"Early Numeracy to 20",
+"Plane Figures & Patterns",
+"Expanding Numeracy to 50",
+"Measurement",
+"Fluency with Number to 100",
+"The Data Cycle"
+],
+  "1": 
+["Building a Math Community",
+"Counting and Numeracy",
+"Addition and Subtraction within 10",
+"Sorting and Classifying Objects",
+"Counting and Numeracy",
+"Addition and Subtraction within 20",
+"Analyzing Shapes and Patterns",
+"Time 1",
+"Counting and Numeracy",
+"Fluency with Addition and Subtraction within 20"],
+  "2": [
+    "Building a Math Community",
+    "Addition and Subtraction within 20   2.CE.1",
+    "Thinking Flexibly to 120   2.NS.1; 2.NS.2; 2.NS.4; 2.PFA.1",
+    "Thinking Flexibly to 120   2.NS.1; 2.NS.2; 2.NS.4; 2.PFA.1",
+    "Measuring My World   2.MG.1; 2.MG.2",
+    "Addition and Subtraction to 100   2.CE.1; 2.NS.4",
+    "Exploring Geometry   2.MG.3; 2.MG.4",
+    "Thinking Flexibly to 999   2.NS.1; 2.NS.2; 2.NS.4",
+    "Analyzing My World and Solving Problems   2.PS.1",
+    "Analyzing My World and Solving Problems   2.PS.1",
+    "Fractions   2.NS.3",
+    "Addition & Subtraction; Introduction to Multiplication   2.CE.1"
+  ],
+
+  "3": [
+    "Building a Math Community",
+    "Place Value / Addition and Subtraction (Part 1)   3.NS.1; 3.NS.2",
+    "Modeling Multiplication and Division   3.CE.2",
+    "Geometry   3.MG.4",
+    "Modeling Fractions   3.NS.3",
+    "Multiplication and Division Strategies with Foundational Facts   3.CE.2; 3.PS.1",
+    "Addition and Subtraction (Part 2)   3.CE.1; 3.PS.1; 3.PFA.1",
+    "Measurement   3.MG.1; 3.MG.2",
+    "Multiplication and Division Building on Foundational Facts   3.CE.2",
+    "Comparing Fractions   3.NS.3",
+    "Time and Money   3.MG.3; 3.NS.4",
+    "Fluency with Multiplication and Division   3.CE.2"
+  ],
+
+  "4": [
+    "Building a Math Community",
+    "Addition and Subtraction   4.NS.1; 4.NS.2; 4.CE.1",
+    "Fraction Number Sense   4.NS.3; 4.PS.2",
+    "Multiplication and Division (Part 1)   4.CE.2; 4.PFA.1",
+    "Decimals   4.NS.4; 4.NS.5; 5.CE.4",
+    "Statistics and Measurement   4.MG.2; 4.PS.1",
+    "Fraction Computation   4.CE.3",
+    "Geometry and Measurement   4.MG.1; 4.MG.3; 4.MG.5; 4.MG.6",
+    "Multiplication and Division (Part 2)   4.CE.2"
+  ],
+
+  "5": [
+    "Building a Math Community   5.PS.1; 5.PS.2",
+    "The Structure of Numbers   5.NS.1; 5.CE.4; 5.PS.3; 5.PFA.1",
+    "Problem Solving with Whole Numbers   5.CE.1",
+    "Decimals and Fractions Number Sense   5.NS.1; 5.PS.3",
+    "Decimal Computation   5.CE.3; 5.PFA.1",
+    "Measurement   5.MG.1",
+    "Fraction Computation   5.CE; 5.PFA.1",
+    "Geometry & Measurement   5.MG.2; 5.MG.3",
+    "Algebraic Reasoning   5.PFA.1; 5.PFA.2"
+  ],
+
+  "6": [
+    "Building a Math Community with the Data Cycle",
+    "Integers and Inequalities   6.NS.2; 6.PFA.4",
+    "The Coordinate Plane and Congruence   6.MG.3; 6.MG.4",
+    "Operations with Integers and One-Step Equations   6.CE.2; 6.PFA.3",
+    "Operations and Applications of Fractions; Decimals; and Percents   6.NS.1; 6.CE.1",
+    "Operations and Applications of Fractions; Decimals; and Percents   6.NS.1; 6.CE.1",
+    "Proportional Reasoning   6.MG.1; 6.PFA.1; 6.PFA.2",
+    "Exponents and Geometric Applications   6.NS.3; 6.MG.2; 6.MG.1",
+    "Statistics & The Data Cycle   6.PS.1; 6.PS.2"
+  ],
+
+  "7": [
+    "Building a Math Community with the Data Cycle   7.PS.2",
+    "Sorting and Classifying Quadrilaterals   7.MG.3",
+    "Rational Numbers   7.NS.1; 7.NS.2; 7.NS.3; 7.CE.1; 7.PFA.2",
+    "Rational Numbers   7.NS.1; 7.NS.2; 7.NS.3; 7.CE.1; 7.PFA.2",
+    "Rational Numbers in Probability   7.PS.1",
+    "Proportional Reasoning   7.CE.2",
+    "Proportional Reasoning within Functions   7.PFA.1",
+    "Expressions; Equations; and Inequalities   7.PFA.2; 7.PFA.3; 7.PFA.4",
+    "Surface Area and Volume   7.MG.1; 7.PFA.2",
+    "Proportional Reasoning within Geometry   7.MG.1; 7.MG.2; 7.MG.4"
+  ],
+
+  "8": [
+    "Building a Math Community with the Data Cycle   8.PS.2",
+    "Expressions and Applications   8.MG.5; 8.PFA.1",
+    "Two-Step Equations and Applications   8.CE.1; 8.MG.1",
+    "The Real Number System   8.NS.1; 8.NS.2",
+    "Multi-Step Equations and Applications   8.PFA.4; 8.MG.1; 8.MG.2; 8.MG.4",
+    "Inequalities   8.PFA.5",
+    "The Data Cycle with Scatterplots   8 PS.3; 8.PFA.2",
+    "Investigating Linear Functions   8.PFA.3; 8.MG.3",
+    "Investigating Linear Functions   8.PFA.3; 8.MG.3",
+    "Probability   8.PS.1"
+  ],
+
+  "Algebra I": [
+    "The Data Cycle",
+    "Linear Functions in Context   A.F.1",
+    "Linear Functions   A.F.1; A.ST.1",
+    "Solving Linear Equations; Inequalities; and Systems   A.EI.1; A.EI.2; A.ST.1",
+    "Non-linear Expressions   A.EO.1; A.EO.3; A.EO.4",
+    "Exponential Functions   A.F.2",
+    "Polynomial Operations   A.EO.2",
+    "Quadratic Functions   A.EI.3; A.F.2; A.ST.1",
+    "Function Synthesis   A.F.2; A.ST.1"
+  ],
+
+  "Geometry": [
+    "Venn Diagrams & Introduction to Logic   G.RLT.1",
+    "Parallel Lines   G.RLT.2",
+    "Symmetry and Transformations   G.RLT.3",
+    "Triangle Properties   G.TR.1",
+    "Similar and Congruent Triangles   G.TR.2; G.TR.3",
+    "Similarity and Right-Triangle Ratios   G.TR.4; G.TR.2",
+    "Similarity and Right-Triangle Ratios   G.TR.4; G.TR.2",
+    "Quadrilaterals and Polygons   G.PC.1; G.PC.2",
+    "Three-Dimensional Figures   G.DF.1; G.DF.2",
+    "Three-Dimensional Figures   G.DF.1; G.DF.2",
+    "Circles   G.PC.3; G.PC.4"
+  ],
+
+  "Algebra II": [
+    "The Data Cycle   A2.ST.2",
+    "Analyzing Function Graphs   A2.F.1",
+    "Solving Absolute-Value Equations and Inequalities   A2.EI.1",
+    "Quadratic Models   A2.EO.4; A2.EI.2; A2.EI.3",
+    "Quadratic Models   A2.EO.4; A2.EI.2; A2.EI.3",
+    "Polynomial Models   A2.EO.2; A2.EO.4; A2.EI.6; A2.F.2",
+    "Radical Function Models   A2.EO.2; A2.EI.5; A2.F.1; A2.F.2",
+    "Rational Function Models   A2.EO.1; A2.EO.3; A2.EI.4; A2.F.1; A2.F.2",
+    "Exponential and Logarithmic Models   A2.F.1; A2.F.2",
+    "Modeling with Functions   A2.F.1; A2.F.2; A2.ST.2",
+    "The Data Cycle (Univariate Data)   A2.ST.1",
+    "Permutations and Combinations   A2.ST.3"
+  ],
+
+  "Computer Mathematics": [
+    "Variables",
+    "Control Structures & Boolean Logic (COM.3) :contentReference[oaicite:21][index=21}",
+    "Modular Programming & Functions (COM.4) :contentReference[oaicite:22][index=22}",
+    "Arrays & Intro Data Structures (COM.5) :contentReference[oaicite:23][index=23}",
+    "Software-Dev Life-Cycle & Testing (COM.6) :contentReference[oaicite:24][index=24}",
+    "Modeling Math Problems in Code (COM.7) :contentReference[oaicite:25][index=25}",
+    "Summative Programming Project (COM.8) :contentReference[oaicite:26][index=26}"
+  ],
+
+  "Algebra II with Trigonometry": [
+    "The Data Cycle   A2.ST.2",
+    "Analyzing Function Graphs   A2.F.1",
+    "Solving Absolute-Value Equations and Inequalities   A2.EI.1",
+    "Quadratic Models   A2.EO.4; A2.EI.2; A2.EI.3",
+    "Polynomial Models   A2.EO.2; A2.EO.4; A2.EI.6; A2.F.2",
+    "Radical Function Models   A2.EO.2; A2.EI.5; A2.F.1; A2.F.2",
+    "Rational Function Models   A2.EO.1; A2.EO.3; A2.EI.4; A2.F.1; A2.F.2",
+    "Exponential and Logarithmic Models   A2.F.1; A2.F.2",
+    "Modeling with Functions   A2.F.1; A2.F.2; A2.ST.2",
+    "The Data Cycle (Univariate Data) *   A2.ST.1",
+    "Permutations and Combinations *   A2.ST.3",
+    "Triangle Trigonometry   T.TT.1; T.TT.2",
+    "Circular Trigonometry   T.CT.1; T.CT.2",
+    "Graphing Trigonometric Functions   T.CT.1; T.CT.2",
+    "Trigonometric Identities and Equations   T.TIE.1; T.TIE.2; T.TIE.3"
+  ],
+
+  "Trigonometry / Advanced Algebra": [
+    "Analyzing Absolute Value and Step Functions   MA.CF.1",
+    "Analyzing Polynomial Functions and Equations   A2.EO.3; A2.EI.6; MA.CF.1; MA.F.1",
+    "Analyzing Radical Functions and Equations   A2.EI.5; MA.CF.1; MA.F.1",
+    "Analyzing Rational Functions and Equations   A2.EO.1; MA.CF.1; MA.F.1",
+    "Analyzing Exponential and Logarithmic Functions   MA.CF.2; MA.F.1; MA.FR.2",
+    "Triangle Trigonometry   T.TT.1; T.TT.2; T.TE.1",
+    "Circle Trigonometry   T.CT.1; T.CT.2",
+    "Graphing Trigonometric Functions   T.CT.1; T.CT.2",
+    "Trigonometric Identities and Equations   T.TE.1; T.TE.2; T.TE.3"
+  ],
+
+  "Functions, Algebra & Data Analysis": [
+    "The Data Cycle & Probability   AFDA.DA.1; AFDA.DA.2; AFDA.DA.3; AFDA.DA.4",
+    "Linear Functions   AFDA.F.1; AFDA.F.2; AFDA.F.3; AFDA.DA.1; AFDA.DA.2",
+    "Quadratic Functions   AFDA.F.1; AFDA.F.2; AFDA.DA.1; AFDA.DA.2",
+    "Exponential Functions   AFDA.F.1; AFDA.F.2; AFDA.DA.1; AFDA.DA.2"
+  ],
+
+  "Precalculus": [
+    "Analyzing Characteristics of Functions   MA.CF.1; MA.CF.2; MA.FR.3; MA.FR.1",
+    "Analyzing Exponential and Logarithmic Functions   MA.CF.2; MA.FR.1; MA.FR.2",
+    "Matrices   MA.AG.5",
+    "Sequences and Series   MA.FR.3",
+    "Conics   MA.AG.1",
+    "Triangle Trigonometry   T.TT.1; T.TT.2; T.TE.1",
+    "Circle Trigonometry   T.CT.1; T.CT.2",
+    "Graphing Trigonometric Functions   T.CT.1; T.CT.2",
+    "Trigonometric Identities and Equations   T.TE.1; T.TE.2; T.TE.3"
+  ],
+
+  "Math Analysis": [
+    "Analyzing Characteristics of Functions   MA.CF.1; MA.CF.2; MA.FR.3; MA.FR.1",
+    "Analyzing Exponential and Logarithmic Functions   MA.CF.2; MA.FR.1; MA.FR.2",
+    "Matrices   MA.AG.5",
+    "Sequences and Series   MA.FR.3",
+    "Conics; Polar; and Parametric Equations   MA.AG.2; MA.AG.1; MA.AG.4",
+    "Vectors   MA.AG.3",
+    "Limits",
+    "Differentiation",
+    "Applications of Derivatives"
+  ],
+
+  "Discrete Mathematics (Semester)": [
+    "Logic and Proofs   DM.LR.1; DM.LR.2; DM.LR.3",
+    "Sets   DM.SNT.1",
+    "Algorithms   DM.CM.1",
+    "Counting Triangles   DM.SNT.2; SM.CM.2",
+    "Graph Theory   DM.GT.1; DM.GT.2; DM.GT.3"
+  ],
+
+  "Probability & Statistics (Semester)": [
+    "Exploring Univariate Statistics   PS.DS.1; PS.DS.2; PS.DS.3",
+    "Data Cycle   PS.DC.2; PS.DC.3",
+    "Data Cycle   PS.DC.2; PS.DC.3",
+    "Probability   PS.P.1",
+    "Normal Distribution   PS.P.3"
+  ],
+
+  "Probability & Statistics (Full Year)": [
+    "Exploring Univariate Statistics   PS.DS.1; PS.DS.2; PS.DS.3; PS.DS.4",
+    "Exploring Bivariate Statistics   PS.DS.5; PS.DS.6",
+    "Exploring Bivariate Statistics   PS.DS.5; PS.DS.6",
+    "Data Cycle   PS.DC.2; PS.DC.3",
+    "Probability   PS.P.1",
+    "Random and Normal Distribution   PS.P.2; PS.P.3",
+    "Sampling Distribution and Inferential Statistics   PS.IS.1; PS.IS.2"
+  ],
+
+  "AP Precalculus": [
+    "Polynomials and Rational Functions",
+    "Exponential and Logarithmic Functions",
+    "Trigonometric and Polar Functions",
+    "Functions Involving Parameters; Vectors; and Matrices",
+    "Topics in Limits and Differentiation"
+  ],
+
+  "AP Calculus AB": [
+    "Limits and Continuity",
+    "Differentiation: Definition and Fundamental Properties",
+    "Differentiation: Composite; Implicit; and Inverse Functions",
+    "Contextual Applications of Differentiation",
+    "Analytical Applications of Differentiation",
+    "Integration and Accumulation of Change",
+    "Differential Equations",
+    "Applications of Integration",
+    "Post-AP Topics"
+  ],
+
+  "AP Calculus BC": [
+    "Limits and Continuity",
+    "Differentiation: Definition and Fundamental Properties",
+    "Differentiation: Composite; Implicit; and Inverse Functions",
+    "Contextual Applications of Differentiation",
+    "Analytical Applications of Differentiation",
+    "Integration and Accumulation of Change",
+    "Differential Equations",
+    "Applications of Integration",
+    "Parametric Equations; Polar Coordinates; and Vector-Valued Functions",
+    "Infinite Sequences and Series",
+    "Post AP Topics"
+  ],
+
+  "AP Statistics": [
+    "Exploring One-Variable Data",
+    "Exploring Two-Variable Data",
+    "Collecting Data",
+    "Probability; Random Variables; and Probability Distributions",
+    "Sampling Distributions",
+    "Inference for Categorical Data and Quantitative Data",
+    "Inference for Categorical Data",
+    "Inference for Quantitative Data",
+    "Exploration"
+  ]
+}
+ 
